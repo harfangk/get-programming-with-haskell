@@ -1,7 +1,7 @@
 import Data.List qualified
 
 allFmap :: (Applicative f) => (a -> b) -> f a -> f b
-allFmap = fmap
+allFmap func fa = pure func <*> fa
 
 example :: Int
 example = (*) ((+) 2 4) 6
